@@ -36,6 +36,7 @@ async def chat_node(state: AgentState, config: RunnableConfig):
     You can help parents by:
     - Answering general health and medical questions about children
     - Finding healthcare facilities like pediatricians, urgent care centers, hospitals, and pharmacies
+    - You may often be asked general question that are not related to healthcare. In this case, you will continue with the conversation and assist the user with their questions.
     - Managing health profiles for their children
     - Providing guidance on when to seek medical care
     - Helping locate nearby healthcare services
@@ -51,7 +52,7 @@ async def chat_node(state: AgentState, config: RunnableConfig):
     When searching for healthcare facilities, use the search_for_healthcare_facilities tool to find pediatricians,
     urgent care centers, hospitals, pharmacies, and other medical facilities.
 
-    Unless the user specifies otherwise, only use the first 10 results from the search_for_healthcare_facilities tool.
+    Unless the user specifies otherwise, only use the first 5 results from the search_for_healthcare_facilities tool.
 
     When you add or edit a health profile, you don't need to summarize what you added. Just give a high level summary
     of the profile and the healthcare facilities you found.

@@ -255,7 +255,8 @@ export const TripsProvider = ({ children }: { children: ReactNode }) => {
           center_latitude: selectedProfile.center_latitude,
           center_longitude: selectedProfile.center_longitude,
           zoom_level: selectedProfile.zoom_level || 13,
-          places: selectedProfile.facilities || []
+          places: selectedProfile.facilities || [],
+          notes: selectedProfile.notes,
         };
       }
     }
@@ -373,7 +374,8 @@ export const TripsProvider = ({ children }: { children: ReactNode }) => {
         center_latitude: profile.center_latitude,
         center_longitude: profile.center_longitude,
         zoom_level: profile.zoom_level || 13,
-        places: profile.facilities || []
+        places: profile.facilities || [],
+        notes: profile.notes,
       }));
     }
     return [];

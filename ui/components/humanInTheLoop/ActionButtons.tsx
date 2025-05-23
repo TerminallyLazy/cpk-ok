@@ -9,7 +9,7 @@ export type ActionButtonsProps = {
 }
 
 export const ActionButtons = ({ status, handler, approve, reject }: ActionButtonsProps) => (
-  <div className="flex gap-4 justify-between">
+  <div className="flex gap-4 justify-between pointer-events-auto">
     <Button 
       className="w-full"
       variant="outline"

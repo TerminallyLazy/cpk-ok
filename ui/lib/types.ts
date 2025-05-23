@@ -30,14 +30,18 @@ export type SearchProgress = {
 export type AgentState = {
   health_profiles: HealthProfile[];
   selected_profile_id: string | null;
+  // Legacy trips fields for backward compatibility
+  trips: Trip[];
+  selected_trip_id: string | null;
   search_progress?: SearchProgress[];
 };
 
 // Keep legacy types for backward compatibility during transition
 export type Place = HealthFacility;
-export type Trip = Omit<HealthProfile, 'child_name' | 'age' | 'facilities' | 'notes'> & {
+export type Trip = Omit<HealthProfile, 'child_name' | 'age' | 'facilities'> & {
   name: string;
   places: Place[];
+  notes?: string;
 };
 
 export const defaultHealthProfiles: HealthProfile[] = [
@@ -70,5 +74,6 @@ export const defaultTrips: Trip[] = defaultHealthProfiles.map(profile => ({
   center_latitude: profile.center_latitude,
   center_longitude: profile.center_longitude,
   zoom_level: profile.zoom_level,
-  places: profile.facilities
+  places: profile.facilities,
+  notes: profile.notes
 }));

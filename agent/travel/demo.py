@@ -26,7 +26,7 @@ sdk = CopilotKitRemoteEndpoint(
     agents=[
         LangGraphAgent(
             name="healthcare",
-            description="Our Kidz healthcare assistant that helps parents with their children's healthcare needs, finds medical facilities, and manages health profiles.",
+            description="Our Kidz healthcare assistant that helps parents with general questions, including helping with locating places to live or move as well as finding rental locations, etc. You also help with their children's healthcare needs, finds medical facilities, and manages health profiles.",
             agent=graph,
         )
     ],

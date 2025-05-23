@@ -41,11 +41,15 @@ export function TripContent({ map, trip }: TripContentProps) {
               <FileText className="w-4 h-4" />
               Health Notes
             </div>
-            <div className="text-sm text-gray-600 bg-white p-3 rounded-md border">
-              <p className="italic">
-                Health notes and information will appear here as you interact with the assistant.
-                Ask me about your child's health, allergies, or medical history!
-              </p>
+            <div className="text-sm text-gray-600 bg-white p-3 rounded-md border whitespace-pre-wrap">
+              {trip.notes ? (
+                <p>{trip.notes}</p>
+              ) : (
+                <p className="italic">
+                  Health notes and information will appear here as you interact with the assistant.
+                  Ask me about your child's health, allergies, or medical history!
+                </p>
+              )}
             </div>
           </div>
         </CardContent>
